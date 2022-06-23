@@ -53,6 +53,7 @@ def main():
         print(f'sending {jsonpayload}')
         producer.send(KAFKA_TOPIC, jsonpayload.encode('utf-8'))
 
+    producer.flush()
 
 if __name__ == '__main__':
     main()
