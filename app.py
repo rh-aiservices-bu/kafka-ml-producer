@@ -47,7 +47,7 @@ def main():
 
     print(f'Subscribed to "{KAFKA_BOOTSTRAP_SERVER}" producing messages on topic "{KAFKA_TOPIC}"...')
 
-    for item in itertools.cycle(data):
+    for item in data:
         time.sleep(float(DELAY))
         jsonpayload = json.dumps({'timestamp': item[0], 'value': item[1]})
         print(f'sending {jsonpayload}')
